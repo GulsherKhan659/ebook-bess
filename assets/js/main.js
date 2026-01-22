@@ -211,8 +211,56 @@ const sr = ScrollReveal({
     duration: 2500,
     delay: 400
 })
+const audio = document.getElementById('sparked-audio');
+const playBtn = document.getElementById('sp-play-btn');
+const playIcon = document.getElementById('sp-play-icon');
+const progressFill = document.getElementById('sp-progress-fill');
+const progressContainer = document.getElementById('sp-progress-container');
+const volumeSlider = document.getElementById('sp-volume');
+const currentTimeEl = document.getElementById('sp-current-time');
+const durationEl = document.getElementById('sp-duration');
 
+// Format time in MM:SS
+function formatTime(seconds) {
+    const min = Math.floor(seconds / 60);
+    const sec = Math.floor(seconds % 60);
+    return `${min}:${sec < 10 ? '0' + sec : sec}`;
+}
 
+// Load duration once metadata is available
+audio.addEventListener('loadedmetadata', () => {
+    durationEl.textContent = formatTime(audio.duration);
+});
+
+// Toggle Play/Pause
+playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+        playIcon.classList.replace('ri-play-fill', 'ri-pause-fill');
+    } else {
+        audio.pause();
+        playIcon.classList.replace('ri-pause-fill', 'ri-play-fill');
+    }
+});
+
+// Update Progress Bar & Timer
+audio.addEventListener('timeupdate', () => {
+    const progressPercent = (audio.currentTime / audio.duration) * 100;
+    progressFill.style.width = `${progressPercent}%`;
+    currentTimeEl.textContent = formatTime(audio.currentTime);
+});
+
+// Click on Progress Bar to Seek
+progressContainer.addEventListener('click', (e) => {
+    const width = progressContainer.clientWidth;
+    const clickX = e.offsetX;
+    audio.currentTime = (clickX / width) * audio.duration;
+});
+
+// Volume Control
+volumeSlider.addEventListener('input', (e) => {
+    audio.volume = e.target.value;
+});
 
 sr.reveal('.home__data, .featured__container, .new__container, .join__data, .testimonial__container, .footer')
 sr.reveal('.home__images',{delay: 600})

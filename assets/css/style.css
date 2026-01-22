@@ -2,6 +2,479 @@
 @import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Montserrat:wght@400;500;600&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
+ .tab-text{
+    padding: 0px 45px;
+  }
+
+  .button-buy-now {
+  --h-button: 48px;
+  --w-button: 102px;
+  --round: 0.75rem;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  background: radial-gradient(
+      65.28% 65.28% at 50% 100%,
+      rgba(223, 113, 255, 0.8) 0%,
+      rgba(223, 113, 255, 0) 100%
+    ),
+    linear-gradient(0deg, #ea9342, #ea9342);
+  border-radius: var(--round);
+  border: none;
+  outline: none;
+  padding: 12px 18px;
+}
+.button::before,
+.button::after {
+  content: "";
+  position: absolute;
+  inset: var(--space);
+  transition: all 0.5s ease-in-out;
+  border-radius: calc(var(--round) - var(--space));
+  z-index: 0;
+}
+.button::before {
+  --space: 1px;
+  background: linear-gradient(
+    177.95deg,
+    rgba(255, 255, 255, 0.19) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+.button::after {
+  --space: 2px;
+  background: radial-gradient(
+      65.28% 65.28% at 50% 100%,
+      rgba(223, 113, 255, 0.8) 0%,
+      rgba(223, 113, 255, 0) 100%
+    ),
+    linear-gradient(0deg, #7a5af8, #7a5af8);
+}
+.button:active {
+  transform: scale(0.95);
+}
+
+.fold {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 1rem;
+  width: 1rem;
+  display: inline-block;
+  transition: all 0.5s ease-in-out;
+  background: radial-gradient(
+    100% 75% at 55%,
+    rgba(223, 113, 255, 0.8) 0%,
+    rgba(223, 113, 255, 0) 100%
+  );
+  box-shadow: 0 0 3px black;
+  border-bottom-left-radius: 0.5rem;
+  border-top-right-radius: var(--round);
+}
+
+.fold::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150%;
+  height: 150%;
+  transform: rotate(45deg) translateX(0%) translateY(-18px);
+  background-color: #e8e8e8;
+  pointer-events: none;
+}
+.button:hover .fold {
+  margin-top: -1rem;
+  margin-right: -1rem;
+}
+
+.points_wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.points_wrapper .point {
+  bottom: -10px;
+  position: absolute;
+  animation: floating-points infinite ease-in-out;
+  pointer-events: none;
+  width: 2px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 9999px;
+}
+@keyframes floating-points {
+  0% {
+    transform: translateY(0);
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-55px);
+    opacity: 0;
+  }
+}
+.points_wrapper .point:nth-child(1) {
+  left: 10%;
+  opacity: 1;
+  animation-duration: 2.35s;
+  animation-delay: 0.2s;
+}
+.points_wrapper .point:nth-child(2) {
+  left: 30%;
+  opacity: 0.7;
+  animation-duration: 2.5s;
+  animation-delay: 0.5s;
+}
+.points_wrapper .point:nth-child(3) {
+  left: 25%;
+  opacity: 0.8;
+  animation-duration: 2.2s;
+  animation-delay: 0.1s;
+}
+.points_wrapper .point:nth-child(4) {
+  left: 44%;
+  opacity: 0.6;
+  animation-duration: 2.05s;
+}
+.points_wrapper .point:nth-child(5) {
+  left: 50%;
+  opacity: 1;
+  animation-duration: 1.9s;
+}
+.points_wrapper .point:nth-child(6) {
+  left: 75%;
+  opacity: 0.5;
+  animation-duration: 1.5s;
+  animation-delay: 1.5s;
+}
+.points_wrapper .point:nth-child(7) {
+  left: 88%;
+  opacity: 0.9;
+  animation-duration: 2.2s;
+  animation-delay: 0.2s;
+}
+.points_wrapper .point:nth-child(8) {
+  left: 58%;
+  opacity: 0.8;
+  animation-duration: 2.25s;
+  animation-delay: 0.2s;
+}
+.points_wrapper .point:nth-child(9) {
+  left: 98%;
+  opacity: 0.6;
+  animation-duration: 2.6s;
+  animation-delay: 0.1s;
+}
+.points_wrapper .point:nth-child(10) {
+  left: 65%;
+  opacity: 1;
+  animation-duration: 2.5s;
+  animation-delay: 0.2s;
+}
+
+.inner {
+  z-index: 2;
+  gap: 6px;
+  position: relative;
+  width: 100%;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: color 0.2s ease-in-out;
+}
+
+.inner svg.icon {
+  width: 18px;
+  height: 18px;
+  transition: fill 0.1s linear;
+}
+
+.button:focus svg.icon {
+  fill: white;
+}
+.button:hover svg.icon {
+  fill: transparent;
+  animation:
+    dasharray 1s linear forwards,
+    filled 0.1s linear forwards 0.95s;
+}
+@keyframes dasharray {
+  from {
+    stroke-dasharray: 0 0 0 0;
+  }
+  to {
+    stroke-dasharray: 68 68 0 0;
+  }
+}
+@keyframes filled {
+  to {
+    fill: white;
+  }
+}
+
+  .book-btn {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .book-container{
+    padding: 10%;
+  }
+.book-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.book-div h4{
+  font-size: 48px;
+}
+.book-div img{
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.made-with {
+    background: #000;
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    line-height: 1em;
+    margin: 0;
+    padding: 5px 110px;
+    position: fixed;
+    top: 20px;
+    right: -100px;
+    text-align: center;
+    text-decoration: none;
+    transform: rotate(45deg);
+}
+.documentation {
+    color: #fd264f;
+}
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none; }
+
+.tabs {
+  display: block;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  overflow: hidden; }
+  .tabs [class^="tab"] label,
+  .tabs [class*=" tab"] label {
+    color: #000;
+    cursor: pointer;
+    display: block;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1em;
+    padding: 2rem 0;
+    text-align: center; }
+  .tabs [class^="tab"] [type="radio"],
+  .tabs [class*=" tab"] [type="radio"] {
+    border-bottom: 1px solid rgba(239, 237, 239, 0.5);
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .tabs [class^="tab"] [type="radio"]:hover, .tabs [class^="tab"] [type="radio"]:focus,
+    .tabs [class*=" tab"] [type="radio"]:hover,
+    .tabs [class*=" tab"] [type="radio"]:focus {
+      border-bottom: 1px solid #000; }
+    .tabs [class^="tab"] [type="radio"]:checked,
+    .tabs [class*=" tab"] [type="radio"]:checked {
+      border-bottom: 2px solid #ea9342; }
+    .tabs [class^="tab"] [type="radio"]:checked + div,
+    .tabs [class*=" tab"] [type="radio"]:checked + div {
+      opacity: 1; }
+    .tabs [class^="tab"] [type="radio"] + div,
+    .tabs [class*=" tab"] [type="radio"] + div {
+      display: block;
+      opacity: 0;
+      padding: 2rem 0;
+      width: 90%;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+  .tabs .tab-2 {
+    width: 50%; }
+
+    .tabs-2 label {
+    color: #000; }
+    .tabs .tab-2 [type="radio"] + div {
+      width: 200%;
+      margin-left: 200%; }
+    .tabs .tab-2 [type="radio"]:checked + div {
+      margin-left: 0; }
+    .tabs .tab-2:last-child [type="radio"] + div {
+      margin-left: 100%; }
+    .tabs .tab-2:last-child [type="radio"]:checked + div {
+      margin-left: -100%; }
+  /*  */
+  .footer__copy{
+    margin-top: 1rem;
+  }
+  .footer-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .footer-logo{
+    width: 85px;
+
+  }
+  .nav-logo{
+    width: 80px ;
+    margin: 10px 0px ;
+    background-size: ccover ;
+    border-radius:100% ;
+  }
+  
+   
+   
+
+  
+/* Base wrapper to isolate the section */
+      /* Container & Title Styles (Kept from your original) */
+.v2-1000 {
+    /* This creates a smooth gradient matching your logo's background */
+    background: linear-gradient(135deg, #1a1b4b 0%, #3e0a91 50%, #1e105a 100%);
+    
+    /* Keeping your original padding and alignment */
+    padding: 60px 20px;
+    margin-top: -15px;
+    text-align: center;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    
+    /* Adds a subtle depth to the section */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+.v2-1001 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 35px;
+}
+.v2-1002 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Common Button Properties (Base) */
+.v2-icon-img {
+    height: 24px;       /* Keeps the logo at a consistent "icon" height */
+    width: auto;        /* Maintains the logo's proportions */
+    margin-right: 12px; /* Matches the spacing of your other icons */
+    display: inline-block;
+    vertical-align: middle;
+    /* Optional: If your logo has a white background and you want it transparent */
+    /* mix-blend-mode: multiply; */ 
+}
+
+/* Specific styling for the Harper Collins Button */
+.v2-bg-3 {
+    background-color: #21355b; /* Official Harper Collins Navy */
+    color: #ffffff !important;
+}
+
+/* Ensure the button flexbox handles the image correctly */
+.v2-1003 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.v2-1003 {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 28px;
+    border-radius: 50px; /* Modern pill shape */
+    text-decoration: none;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.v2-1003 i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.v2-1003:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* --- Brand Specific Styles --- */
+
+/* Amazon - Yellow Gradient & Dark Text */
+.v2-bg-1 { 
+    background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+    color: #111111 !important;
+    border: 1px solid #a88734;
+}
+
+/* Barnes & Noble - Elegant Deep Teal */
+.v2-bg-2 { 
+    background-color: #3D555E;
+    color: #ffffff !important;
+    font-family: "Georgia", serif; /* Serif for books */
+}
+
+/* Harper Collins - Professional Navy */
+.v2-bg-3 { 
+    background-color: #21355b;
+    color: #ffffff !important;
+}
+
+/* Target - Iconic Bold Red */
+.v2-bg-4 { 
+    background-color: #CC0000;
+    color: #ffffff !important;
+}
+
+/* Walmart - Spark Blue */
+.v2-bg-5 { 
+    background-color: #0071ce;
+    color: #ffffff !important;
+}
+
 :root {
   --header-height: 3.5rem;
 
@@ -1168,9 +1641,216 @@ row-gap: 3rem;
   width: 290px;
 }
 
+/*=============== CUSTOM AUDIO PLAYER ===============*/
+/*=============== 1. HOME SECTION VERTICAL FIXES ===============*/
+/* This prevents content from overlapping the fixed navbar */
+.home.section {
+    padding-block: 4rem 1rem !important; /* Reduced from 5rem */
+}
+
+/* Tighten the space inside the home container */
+.home__container {
+    padding-top: 0.5rem !important; /* Reduced from 2rem */
+    row-gap: 1.5rem !important;     /* Gap between text and image on mobile */
+}
+
+.home__description {
+    margin-bottom: 1rem !important; /* Give more space to the player */
+}
+
+/* Fix for your 'main_image' div to prevent it from stretching the header */
+.main_image {
+    height: auto !important; /* Crucial: removes the 80% height which causes the push */
+    padding: 1rem 0;
+}
+
+.main_image img {
+    width: 54%; /* Standardizing image size for responsiveness */
+    margin: 0 auto;
+}
+
+/*=============== 2. COMPACT AUDIO PLAYER ===============*/
+.sparked-player-wrapper {
+    background: var(--container-color);
+    border: 2px solid var(--border-color);
+    padding: 12px 16px; /* Compact padding */
+    border-radius: 1rem;
+    margin-top: 5px; /* Pull player closer to text */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sparked-audio-title {
+    font-size: var(--smaller-font-size);
+    color: var(--title-color);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.sparked-controls-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sparked-play-toggle {
+    background-color: var(--first-color);
+    color: var(--white-color);
+    width: 35px; /* Slightly smaller button */
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.sparked-progress-group {
+    flex: 1; /* Takes up remaining space */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sparked-slider-container {
+    width: 100%;
+    height: 5px;
+    background-color: var(--border-color);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.sparked-progress-fill {
+    position: absolute;
+    height: 100%;
+    background-color: var(--title-color);
+    width: 0%;
+}
+
+.sparked-timer {
+    font-size: 10px;
+    color: var(--text-color);
+    text-align: right;
+}
+
+.sparked-volume-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#sp-volume {
+    width: 50px;
+    accent-color: var(--first-color);
+    cursor: pointer;
+}
+
+/*=============== 3. RESPONSIVE MEDIA QUERIES ===============*/
 
 
 
+}
+/* Desktop Fix: Keeps content from floating too high */
+@media screen and (min-width: 1150px) {
+    .home__container {
+        column-gap: 3rem;
+        padding-top: 2rem !important;
+    }
+}
 
+@media (min-width: 350px) {
+        .sparked-player-wrapper {
+    background: var(--container-color);
+    border: 2px solid var(--border-color);
+    padding: 12px 16px; /* Compact padding */
+    border-radius: 1rem;
+    margin-top: 5px; /* Pull player closer to text */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sparked-audio-title {
+    font-size: var(--smaller-font-size);
+    color: var(--title-color);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.sparked-controls-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sparked-play-toggle {
+    background-color: var(--first-color);
+    color: var(--white-color);
+    width: 35px; /* Slightly smaller button */
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.sparked-progress-group {
+    flex: 1; /* Takes up remaining space */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sparked-slider-container {
+    width: 100%;
+    height: 5px;
+    background-color: var(--border-color);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.sparked-progress-fill {
+    position: absolute;
+    height: 100%;
+    background-color: var(--title-color);
+    width: 0%;
+}
+
+.sparked-timer {
+    font-size: 10px;
+    color: var(--text-color);
+    text-align: right;
+}
+
+.sparked-volume-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#sp-volume {
+    width: 50px;
+    accent-color: var(--first-color);
+    cursor: pointer;
+}
+    }
+@media screen and (max-width: 768px) {
+    .home__container {
+        grid-template-columns: 1fr; /* Stack vertically on mobile */
+        text-align: center;
+    }
+    
+    .sparked-controls-row {
+        gap: 8px;
+    }
+    
+    /* Hide volume on very small phones to prevent layout break */
+    
 }
 
