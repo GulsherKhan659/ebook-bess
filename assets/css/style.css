@@ -1323,7 +1323,7 @@ row-gap: 3rem;
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media (min-width: 380px) {
+@media (min-width: 320px ) {
     .tab_text
   {
     font-size: 18px !important;
@@ -1340,9 +1340,7 @@ row-gap: 3rem;
 }
 }
 @media screen and (max-width: 320px){
-.nav{
-  height: 5rem;
-}
+
   .container{
     margin-inline: 1rem;
   }
