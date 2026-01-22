@@ -1337,9 +1337,15 @@ row-gap: 3rem;
   .nav{
   height: 5rem;
   padding: 15px 0px;
+
 }
+ .book-div img {
+    width: 60%;
+    margin-top: 20px;
+  }
 }
 @media screen and (max-width: 320px){
+ 
 
   .container{
     margin-inline: 1rem;
