@@ -1331,13 +1331,18 @@ row-gap: 3rem;
   }
     .nav-logo{
     width: 55px !important; 
-    margin-top: 25px;
     background-size: cover ;
     border-radius:100% ;
   }
+  .nav{
+  height: 5rem;
+  padding: 15px 0px;
+}
 }
 @media screen and (max-width: 320px){
-
+.nav{
+  height: 5rem;
+}
   .container{
     margin-inline: 1rem;
   }
