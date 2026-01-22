@@ -7,8 +7,8 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(230, 62%, 56%);
-  --title-color: hsl(230, 70%, 16%);
+  --first-color: hsl(41, 62%, 56%);
+  --title-color: #ea9342;
   --text-color: hsl(230, 16%, 45%);
   --border-color: hsl(230, 50%, 90%);
   --white-color: hsl(0, 0%, 100%);
@@ -103,8 +103,9 @@ img {
 /*=============== THEME ===============*/
 /*========== Variables Dark theme ==========*/
 body.dark-theme{
-  --title-color: hsl(230, 48%, 85%);
-  --text-color: hsl(230, 16%, 70%);
+    --first-color: hsl(41, 62%, 56%);
+  --title-color: #ea9342;
+  --text-color: hsl(230, 16%, 45%);
   --border-color: hsl(230, 12%, 18%);
   --body-color: hsl(230, 12%, 8%);
   --container-color: hsl(230, 12%, 12%);
@@ -849,7 +850,21 @@ row-gap: 3rem;
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media (min-width: 380px) {
+    .tab_text
+  {
+    font-size: 18px !important;
+    font-weight: bold;
+  }
+    .nav-logo{
+    width: 55px !important; 
+    margin-top: 25px;
+    background-size:cover ;
+    border-radius:100% ;
+  }
+}
 @media screen and (max-width: 320px){
+
   .container{
     margin-inline: 1rem;
   }
@@ -880,6 +895,12 @@ row-gap: 3rem;
 
 /* For medium devices */
 @media screen and (min-width: 450px){
+  .tab_text{
+ font-size: 20px !important;
+  }
+  .tab2 h2{
+      
+    }
   .featured__card{
     width: 290px;
   }

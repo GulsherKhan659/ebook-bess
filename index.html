@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--=============== FAVICON ===============-->
     <!-- Standard favicon -->
 <link rel="icon" type="image/x-icon" href="./assets/img/favicon/favicon.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <!-- PNG favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
@@ -31,6 +33,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>The Sparked Remarks</title>
 <style>
+  .tab-text{
+    padding: 0px 45px;
+  }
 
   .button-buy-now {
   --h-button: 48px;
@@ -48,7 +53,7 @@
       rgba(223, 113, 255, 0.8) 0%,
       rgba(223, 113, 255, 0) 100%
     ),
-    linear-gradient(0deg, #7a5af8, #7a5af8);
+    linear-gradient(0deg, #ea9342, #ea9342);
   border-radius: var(--round);
   border: none;
   outline: none;
@@ -102,6 +107,7 @@
   border-bottom-left-radius: 0.5rem;
   border-top-right-radius: var(--round);
 }
+
 .fold::after {
   content: "";
   position: absolute;
@@ -259,7 +265,7 @@
     align-items: center;
   }
   #books{
-    margin: 0 150px;
+    /* margin: 0 150px; */
   }
   .book-container{
     padding: 10%;
@@ -341,7 +347,7 @@ select:focus {
       border-bottom: 1px solid #000; }
     .tabs [class^="tab"] [type="radio"]:checked,
     .tabs [class*=" tab"] [type="radio"]:checked {
-      border-bottom: 2px solid #000; }
+      border-bottom: 2px solid #ea9342; }
     .tabs [class^="tab"] [type="radio"]:checked + div,
     .tabs [class*=" tab"] [type="radio"]:checked + div {
       opacity: 1; }
@@ -389,19 +395,118 @@ select:focus {
     background-size: ccover ;
     border-radius:100% ;
   }
-  @media (min-width: 380px) {
-    /* .nav-logo{
-      top: 10px;
-      padding: 10px;
-      
-    margin: 10px 0px ;
-      width: 40px;
-    } */
-  }
+  
+   
+   
 
   
 /* Base wrapper to isolate the section */
-        .v2-1000 {
+      /* Container & Title Styles (Kept from your original) */
+.v2-1000 {
+    /* This creates a smooth gradient matching your logo's background */
+    background: linear-gradient(135deg, #1a1b4b 0%, #3e0a91 50%, #1e105a 100%);
+    
+    /* Keeping your original padding and alignment */
+    padding: 60px 20px;
+    margin-top: -15px;
+    text-align: center;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    
+    /* Adds a subtle depth to the section */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+.v2-1001 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 35px;
+}
+.v2-1002 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Common Button Properties (Base) */
+.v2-icon-img {
+    height: 24px;       /* Keeps the logo at a consistent "icon" height */
+    width: auto;        /* Maintains the logo's proportions */
+    margin-right: 12px; /* Matches the spacing of your other icons */
+    display: inline-block;
+    vertical-align: middle;
+    /* Optional: If your logo has a white background and you want it transparent */
+    /* mix-blend-mode: multiply; */ 
+}
+
+/* Specific styling for the Harper Collins Button */
+.v2-bg-3 {
+    background-color: #21355b; /* Official Harper Collins Navy */
+    color: #ffffff !important;
+}
+
+/* Ensure the button flexbox handles the image correctly */
+.v2-1003 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.v2-1003 {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 28px;
+    border-radius: 50px; /* Modern pill shape */
+    text-decoration: none;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.v2-1003 i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.v2-1003:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* --- Brand Specific Styles --- */
+
+/* Amazon - Yellow Gradient & Dark Text */
+.v2-bg-1 { 
+    background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+    color: #111111 !important;
+    border: 1px solid #a88734;
+}
+
+/* Barnes & Noble - Elegant Deep Teal */
+.v2-bg-2 { 
+    background-color: #3D555E;
+    color: #ffffff !important;
+    font-family: "Georgia", serif; /* Serif for books */
+}
+
+/* Harper Collins - Professional Navy */
+.v2-bg-3 { 
+    background-color: #21355b;
+    color: #ffffff !important;
+}
+
+/* Target - Iconic Bold Red */
+.v2-bg-4 { 
+    background-color: #CC0000;
+    color: #ffffff !important;
+}
+
+/* Walmart - Spark Blue */
+.v2-bg-5 { 
+    background-color: #0071ce;
+    color: #ffffff !important;
+}  /* .v2-1000 {
             background-color: #000;
             padding: 60px 20px;
             margin-top:-15px;
@@ -410,7 +515,7 @@ select:focus {
         }
 
         /* Title style */
-        .v2-1001 {
+        /* .v2-1001 {
             color: #ffffff;
             font-size: 32px;
             font-weight: 300;
@@ -419,15 +524,15 @@ select:focus {
         }
 
         /* Flex container for buttons */
-        .v2-1002 {
+        /* .v2-1002 {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
-        }
+        } */
 
         /* Common button properties */
-        .v2-1003 {
+        /* .v2-1003 {
             display: inline-flex;
             align-items: center;
             padding: 14px 28px;
@@ -435,13 +540,13 @@ select:focus {
             text-decoration: none;
             color: #ffffff;
             font-family: "Georgia", serif; /* Matching the serif look in the image */
-            font-weight: 500;
+            /* font-weight: 500;
             font-size: 17px;
             text-transform: uppercase;
             transition: all 0.3s ease;
-        }
+        } */ */
 
-        .v2-1003 i {
+        /* .v2-1003 i {
             margin-right: 12px;
             font-size: 1.1em;
         }
@@ -449,14 +554,14 @@ select:focus {
         .v2-1003:hover {
             filter: brightness(1.1);
             transform: translateY(-2px);
-        }
+        } */
 
         /* Specific Color Classes */
-        .v2-bg-1 { background-color: #FF9900; } /* Amazon */
-        .v2-bg-2 { background-color: #3D555E; } /* Barnes & Noble */
-        .v2-bg-3 { background-color: #EBB134; } /* Harper Collins */
-        .v2-bg-4 { background-color: #F04134; } /* Target */
-        .v2-bg-5 { background-color: #2090EB; } /* Walmart */
+        /* .v2-bg-1 { background-color: #FF9900; } /* Amazon */
+        /* .v2-bg-2 { background-color: #3D555E; } /* Barnes & Noble */
+        /* .v2-bg-3 { background-color: #EBB134; } Harper Collins */
+        /* .v2-bg-4 { background-color: #F04134; } Target */
+        /* .v2-bg-5 { background-color: #2090EB; } Walmart */ */ */ */ */
 </style>
   </head>
 <body>
@@ -522,7 +627,7 @@ select:focus {
       </div>
 
       <!--==================== LOGIN ====================-->
-      <div class="login grid" id="login-content">
+      <!-- <div class="login grid" id="login-content">
          <form action="" class="login__form grid">
           <h3 class="login__title">Log In</h3>
 
@@ -554,7 +659,7 @@ select:focus {
 
          <i class="ri-close-line login__close" id="login-close"></i>
 
-      </div>
+      </div> -->
 
       <!--==================== MAIN ====================-->
       <main class="main">
@@ -603,27 +708,32 @@ select:focus {
         <section class="v2-1000">
         <h2 class="v2-1001">Find The Sparked Remarks</h2>
         
-        <div class="v2-1002">
-            <a href="#" class="v2-1003 v2-bg-1">
-                <i class="fab fa-amazon"></i> Amazon
-            </a>
-            
-            <a href="#" class="v2-1003 v2-bg-2">
-                <i class="fas fa-book"></i> Barnes & Nobles
-            </a>
-            
-            <a href="#" class="v2-1003 v2-bg-3">
-                <i class="fas fa-fire-alt"></i> Harper Collins
-            </a>
-            
-            <a href="#" class="v2-1003 v2-bg-4">
-                <i class="fas fa-bullseye"></i> Target
-            </a>
-            
-            <a href="#" class="v2-1003 v2-bg-5">
-                <i class="fas fa-asterisk"></i> Walmart
-            </a>
-        </div>
+<div class="v2-1000">
+    <h2 class="v2-1001">Available At</h2>
+    <div class="v2-1002">
+        <a href="#" class="v2-1003 v2-bg-1">
+            <i class="fab fa-amazon"></i> Amazon
+        </a>
+
+          <a href="#" class="v2-1003 v2-bg-3">
+    <img src="assets/img/book/barnes1.png" alt="HarperCollins" class="v2-icon-img">
+    Barnes&Nobles
+</a>
+
+       <a href="#" class="v2-1003 v2-bg-3">
+    <img src="assets/img/book/sparked1.png" alt="HarperCollins" class="v2-icon-img">
+    Harper Collins
+</a>
+        <a href="#" class="v2-1003 v2-bg-4">
+            <i class="fas fa-bullseye"></i> Target
+        </a>
+
+       <a href="#" class="v2-1003 v2-bg-3">
+    <img src="assets/img/book/walmart-removebg-preview.png" alt="HarperCollins" class="v2-icon-img">
+    Walmart
+</a>
+    </div>
+</div>
          </section>
 
          <!--==================== SERVICES ====================-->
@@ -838,8 +948,8 @@ select:focus {
 
 Worked in start-ups, project dev. & promotion, abuses.  Business travel in 67 countries. Leads developmental training sessions and workshops regarding physiognomy (biometrics).  Served on Board of Directors with Galveston County Resource and Crisis Center plus Hill Country Cares. First business owned with payroll, taxes paid when 17. (DOB: 1-1-45)
                 </p>
-
-                <a href="#" class="button">Shop Now</a>
+<!-- 
+                <a href="#" class="button">Shop Now</a> -->
               </div>
               <div class="discount__images">
                 <img src="./assets/img/book/author.png" alt="image" class="discount__img-1">
@@ -1315,13 +1425,27 @@ Worked in start-ups, project dev. & promotion, abuses.  Business travel in 67 co
           <div class="tabs">
   <div class="tab-2">
     <label for="tab2-1">
-      <h2>
+      <h2 class="tab_text">
       Sparked Remarks
-    </h2></label>
+      
+    </h2>
+    
+  </label>
+  
     <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
     <div class="book-container">
-      <h4>The Sparked Remarks</h4>
+      <div class="tab-text">
+      <h2>The Sparked Remarks</h2><br>
+      <p>
+        Lil’ Bessie “Bessieki” is a woman defined by her evolution from a "flower child" of the 1960s to a formidable business leader, and finally, to a poet of deep spiritual resonance. Though she began her career as a classically trained artist and educator, the demands of being a single mother led her into the international business world. There, her aristocratic poise and sharp intellect allowed her to navigate global cultures, even as she sacrificed her "esoteric passions" of sculpture and painting to provide for her daughters.
+
+Now in her 80s, despite the physical toll of a life of hard work, her creative spirit remains undimmed. Having once burned her early writings out of a sense of inadequacy, she eventually turned to poetry as her "new canvas." These verses—some raw with trauma, others elegant with grace—serve as a roadmap of a soul moving toward "Christness" and greater awareness. Published by her daughters through Twin Dreamers, LLC, this collection is the culmination of a life lived as a "work in progress," proving that even when the body tires, the soul continues its upward climb.
+      </p>
+      </div>
+      
       <div class="book-div">
+        
+
 
         <img src="./assets/img/book/3d-book.png" alt="" srcset="">
        
@@ -1364,15 +1488,22 @@ Worked in start-ups, project dev. & promotion, abuses.  Business travel in 67 co
       </div>
     </div>
   </div>
-  <div class="tab-2">
+  <div class="tab-2 ">
     <label for="tab2-2">
-      <h2>
+      <h2 class="tab_text">
       Face Facts
         </h2>
     </label>
     <input id="tab2-2" name="tabs-two" type="radio">
     <div class="book-container">
-      <h4>Face Facts</h4>
+      <div class="tab-text">
+        <h2>Face Facts</h2><br>
+      <p>
+        Lil’ Bessie “Bessieki” is a woman defined by her evolution from a "flower child" of the 1960s to a formidable business leader, and finally, to a poet of deep spiritual resonance. Though she began her career as a classically trained artist and educator, the demands of being a single mother led her into the international business world. There, her aristocratic poise and sharp intellect allowed her to navigate global cultures, even as she sacrificed her "esoteric passions" of sculpture and painting to provide for her daughters.
+
+Now in her 80s, despite the physical toll of a life of hard work, her creative spirit remains undimmed. Having once burned her early writings out of a sense of inadequacy, she eventually turned to poetry as her "new canvas." These verses—some raw with trauma, others elegant with grace—serve as a roadmap of a soul moving toward "Christness" and greater awareness. Published by her daughters through Twin Dreamers, LLC, this collection is the culmination of a life lived as a "work in progress," proving that even when the body tires, the soul continues its upward climb.
+      </p>
+      </div>
     <div class="book-div">
         <img src="./assets/img/book/3d-book2.png" alt="" srcset="">
         
@@ -1509,44 +1640,45 @@ Worked in start-ups, project dev. & promotion, abuses.  Business travel in 67 co
 
       <!--==================== FOOTER ====================-->
       <footer class="footer">
-         <!-- <div class="footer__container container grid">
+         <div class="footer__container container grid">
           <div>
             <a href="#" class="footer__logo">
-              <i class="ri-book-3-line"></i>E-Book
+            <div class="footer-logo">
+          
+                     <img src="./assets/img/logo.JPG" alt="" srcset="">
+         </div>
             </a>
 
             <p class="footer__description">
-              Find and explore the best <br>                             
-              eBooks from all your <br>
-              favorite writers.
+             A lifelong artist and a true product of the sixties, <br> Momma has always been a creator at heart.
             </p>
           </div>
 
           <div class="footer__data grid">
             <div>
-              <h3 class="footer__title">About</h3>
+              <h3 class="footer__title">Quick links</h3>
 
               <ul class="footer__links">
                 <li>
-                  <a href="#" class="footer__link">Awards</a>
+                  <a href="#home" class="footer__link">Home</a>
                 </li>
 
                 <li>
-                  <a href="#" class="footer__link">FAQs</a>
+                  <a href="#sparked" class="footer__link">Sparked Remarks</a>
                 </li>
 
                 <li>
-                  <a href="#" class="footer__link">Privacy policy</a>
+                  <a href="#dr-bess" class="footer__link">DR.Bess</a>
                 </li>
 
                 <li>
-                  <a href="#" class="footer__link">Terms of services</a>
+                  <a href="#books" class="footer__link">Books</a>
                 </li>
               </ul>
 
             </div>
 
-            <div>
+            <!-- <div>
               <h3 class="footer__title">Company</h3>
 
               <ul class="footer__links">
@@ -1567,7 +1699,7 @@ Worked in start-ups, project dev. & promotion, abuses.  Business travel in 67 co
                 </li>
               </ul>
 
-            </div>
+            </div> -->
 
             <div>
               <h3 class="footer__title">Contact</h3>
@@ -1610,13 +1742,14 @@ Worked in start-ups, project dev. & promotion, abuses.  Business travel in 67 co
 
             </div>
           </div>
-         </div> -->
-        <div class="footer-div">
+         </div>
+        <!-- <div class="footer-div">
          <div class="footer-logo">
           
                      <img src="./assets/img/logo.JPG" alt="" srcset="">
          </div>
-                    </div>
+                    </div> -->
+                    <hr style="margin: 25px 0;">
          <span class="footer__copy">
 
           Copyright &copy; 2026 All rights reserved..
