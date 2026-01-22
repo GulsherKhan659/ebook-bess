@@ -859,7 +859,7 @@ row-gap: 3rem;
     .nav-logo{
     width: 55px !important; 
     margin-top: 25px;
-    background-size:cover ;
+    background-size: cover ;
     border-radius:100% ;
   }
 }

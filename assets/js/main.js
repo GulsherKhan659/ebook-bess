@@ -1,5 +1,7 @@
 /*===============SEARCH=================*/
 
+
+
 const searchButton = document.getElementById('search-button'),
       searchClose = document.getElementById('search-close'),
       searchContent = document.getElementById('search-content')
@@ -209,6 +211,8 @@ const sr = ScrollReveal({
     duration: 2500,
     delay: 400
 })
+
+
 
 sr.reveal('.home__data, .featured__container, .new__container, .join__data, .testimonial__container, .footer')
 sr.reveal('.home__images',{delay: 600})
